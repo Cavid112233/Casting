@@ -9,10 +9,18 @@ namespace Core.Entities
     public class Truck : Vehicle
     {
         public int CarryingCapacity { get; set; }
-
-        public override void ShowInfo()
+        public Truck()
         {
-            Console.WriteLine($" CarryingCapacity: {CarryingCapacity}");
+
+        }
+        public Truck(string marka, string model, int year, int carryingcapacity) : base(marka, model, year)
+        {
+            CarryingCapacity = carryingcapacity;
+        }
+
+        public override string ShowInfo()
+        {
+            return $" CarryingCapacity: {CarryingCapacity}";
         }
     }
 }

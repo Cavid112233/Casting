@@ -8,13 +8,22 @@ namespace Core.Entities
 {
     public class Vehicle
     {
-        public string Brand { get; set; }
+        public string Marka { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
-
-        public virtual void ShowInfo()
+        public Vehicle()
         {
-            Console.WriteLine($"Brand-{Brand}:Model-{Model}: Year-{Year}");
+            
+        }
+        public Vehicle(string marka, string model, int year)
+        {
+            Marka = marka;
+            Model = model;
+            Year = year;
+        }
+        public virtual string ShowInfo()
+        {
+            return $"Brand-{Marka}:Model-{Model}: Year-{Year}";
         }
     }
 }
